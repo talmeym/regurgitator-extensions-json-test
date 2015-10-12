@@ -1,0 +1,8 @@
+{
+    "kind": "xpath-processor",
+    "xpath": "xpath/xpath",
+    "namespaces": {
+        "prefix1": "uri1",
+        "prefix2": "uri2"
+    }
+}

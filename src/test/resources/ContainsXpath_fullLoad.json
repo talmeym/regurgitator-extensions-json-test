@@ -1,0 +1,36 @@
+{
+    "id": "regurgitator-configuration-1",
+    "kind": "regurgitator-configuration",
+    "steps": [
+        {
+            "id": "decision-1",
+            "kind": "decision",
+            "steps": [
+                {
+                    "id": "test-step-1",
+                    "kind": "test-step"
+                }
+            ],
+            "rules": [
+                {
+                    "id": "rule-1",
+                    "step": "test-step-1",
+                    "conditions": [
+                        {
+                            "id": "condition-1",
+                            "behaviour": {
+                                "kind": "contains-xpath",
+                                "namespaces": {
+                                    "prefix1": "url1",
+                                    "prefix2": "url2"
+                                }
+                            },
+                            "source": "context:location",
+                            "value": "/something/something"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

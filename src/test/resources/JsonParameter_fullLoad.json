@@ -1,0 +1,13 @@
+{
+    "kind": "sequence",
+    "steps": [
+        {
+            "id": "json-parameter-1",
+            "kind": "json-parameter",
+            "name": "name",
+            "source": "location",
+            "json-path": "jsonpath.jsonpath"
+        }
+    ]
+}
+

@@ -15,7 +15,7 @@ public class FreemarkerBuilderJsonLoaderTest extends JsonBaseTest {
 
 	@Test
 	public void testMinimumJson() throws Exception {
-		assertExpectation(getJsonObject("classpath:/FreemarkerBuilder.json"), "com.emarte.regurgitator.extensions.FreemarkerBuilder:[null,'something something']");
+		assertExpectation(getJsonObject("classpath:/FreemarkerBuilder.json"), "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something']]");
 	}
 
 	private void assertExpectation(JSONObject jsonObject, String expected) throws RegurgitatorException {

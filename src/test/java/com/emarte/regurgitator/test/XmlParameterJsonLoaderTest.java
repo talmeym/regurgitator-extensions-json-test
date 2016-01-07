@@ -25,7 +25,7 @@ public class XmlParameterJsonLoaderTest extends JsonBaseTest {
 
 	@Test
 	public void testMaximumFlatJson() throws Exception {
-		assertExpectation(getJsonObject("classpath:/XmlParameter_max_flat.json"), "com.emarte.regurgitator.extensions.XmlParameter:['xml-parameter-1',com.emarte.regurgitator.core.ParameterPrototype:['name',com.emarte.regurgitator.core.StringType:[],com.emarte.regurgitator.core.ConflictPolicy:REPLACE],'parameters',com.emarte.regurgitator.core.ContextLocation:['location'],com.emarte.regurgitator.extensions.XPathProcessor:['xpath/xpath',{prefix1=uri1, prefix2=uri2}],com.emarte.regurgitator.test.stuff.TestValueProcessor:[]]");
+		assertExpectation(getJsonObject("classpath:/XmlParameter_maxFlat.json"), "com.emarte.regurgitator.extensions.XmlParameter:['xml-parameter-1',com.emarte.regurgitator.core.ParameterPrototype:['name',com.emarte.regurgitator.core.StringType:[],com.emarte.regurgitator.core.ConflictPolicy:REPLACE],'parameters',com.emarte.regurgitator.core.ContextLocation:['location'],com.emarte.regurgitator.extensions.XPathProcessor:['xpath/xpath',{prefix1=uri1, prefix2=uri2}],com.emarte.regurgitator.test.stuff.TestValueProcessor:[]]");
 	}
 
 	private void assertExpectation(JSONObject jsonObject, String expected) throws RegurgitatorException {

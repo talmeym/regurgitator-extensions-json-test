@@ -1,0 +1,13 @@
+{
+    "kind": "sequence",
+    "steps": [
+        {
+            "kind": "build-parameter",
+            "name": "name",
+            "builder": {
+                "kind": "freemarker-builder",
+                "value": "value"
+            }
+        }
+    ]
+}

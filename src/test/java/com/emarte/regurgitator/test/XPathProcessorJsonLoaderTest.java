@@ -1,7 +1,7 @@
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
-import com.emarte.regurgitator.extensions.XPathProcessorJsonLoader;
+import com.emarte.regurgitator.core.*;
+import com.emarte.regurgitator.extensions.XpathProcessorJsonLoader;
 import net.sf.json.JSONObject;
 import org.junit.Test;
 
@@ -9,18 +9,23 @@ import java.util.HashSet;
 
 import static junit.framework.Assert.assertEquals;
 
-public class XPathProcessorJsonLoaderTest extends JsonBaseTest {
+public class XpathProcessorJsonLoaderTest extends JsonBaseTest {
 
-	private XPathProcessorJsonLoader toTest = new XPathProcessorJsonLoader();
+	private XpathProcessorJsonLoader toTest = new XpathProcessorJsonLoader();
 
 	@Test
 	public void testJson() throws Exception {
-		assertExpectation(getJsonObject("classpath:/XPathProcessor.json"), "com.emarte.regurgitator.extensions.XPathProcessor:['xpath/xpath',{prefix1=uri1, prefix2=uri2}]");
+		assertExpectation(getJsonObject("classpath:/XpathProcessor.json"), "com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix1=uri1, prefix2=uri2}]");
 	}
 
 	@Test
 	public void testMinimumJson() throws Exception {
-		assertExpectation(getJsonObject("classpath:/XPathProcessor_min.json"), "com.emarte.regurgitator.extensions.XPathProcessor:['xpath/xpath',{prefix1=uri1, prefix2=uri2}]");
+		assertExpectation(getJsonObject("classpath:/XpathProcessor_min.json"), "com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix1=uri1, prefix2=uri2}]");
+	}
+
+	@Test
+	public void testFullLoad() throws RegurgitatorException {
+		ConfigurationFile.loadFile("classpath:/XpathProcessor_fullLoad.json");
 	}
 
 	private void assertExpectation(JSONObject jsonObject, String expected) throws RegurgitatorException {

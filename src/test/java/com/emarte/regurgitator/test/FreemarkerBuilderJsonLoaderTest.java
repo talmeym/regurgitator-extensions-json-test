@@ -1,6 +1,6 @@
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
+import com.emarte.regurgitator.core.*;
 import com.emarte.regurgitator.extensions.FreemarkerBuilderJsonLoader;
 import net.sf.json.JSONObject;
 import org.junit.Test;
@@ -16,6 +16,11 @@ public class FreemarkerBuilderJsonLoaderTest extends JsonBaseTest {
 	@Test
 	public void testMinimumJson() throws Exception {
 		assertExpectation(getJsonObject("classpath:/FreemarkerBuilder.json"), "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something']]");
+	}
+
+	@Test
+	public void testFullLoadJson() throws RegurgitatorException {
+		ConfigurationFile.loadFile("classpath:/FreemarkerBuilder_fullLoad.json");
 	}
 
 	private void assertExpectation(JSONObject jsonObject, String expected) throws RegurgitatorException {

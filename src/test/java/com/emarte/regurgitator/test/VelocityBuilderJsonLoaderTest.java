@@ -14,7 +14,7 @@ public class VelocityBuilderJsonLoaderTest extends JsonBaseTest {
 	private VelocityBuilderJsonLoader toTest = new VelocityBuilderJsonLoader();
 
 	@Test
-	public void testMinimumXml() throws Exception {
+	public void testMinimumJson() throws Exception {
 		assertExpectation(getJsonObject("classpath:/VelocityBuilder.json"), "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something']]");
 	}
 

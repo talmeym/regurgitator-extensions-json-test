@@ -1,0 +1,11 @@
+{
+    "kind": "sequence",
+    "steps": [
+        {
+            "kind": "xml-parameter",
+            "name": "name",
+            "source": "source",
+            "xpath": "xpath"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
+import com.emarte.regurgitator.core.*;
 import com.emarte.regurgitator.extensions.JsonPathProcessorJsonLoader;
 import net.sf.json.JSONObject;
 import org.junit.Test;
@@ -16,6 +16,11 @@ public class JsonPathProcessorJsonLoaderTest extends JsonBaseTest {
 	@Test
 	public void testMinimumJson() throws Exception {
 		assertExpectation(getJsonObject("classpath:/JsonPathProcessor.json"), "com.emarte.regurgitator.extensions.JsonPathProcessor:['something.something']");
+	}
+
+	@Test
+	public void testFullLoad() throws RegurgitatorException {
+		ConfigurationFile.loadFile("classpath:/JsonPathProcessor_fullLoad.json");
 	}
 
 	private void assertExpectation(JSONObject jsonObject, String expected) throws RegurgitatorException {

@@ -1,0 +1,14 @@
+{
+    "kind": "sequence",
+    "steps": [
+        {
+            "kind": "create-parameter",
+            "name": "name",
+            "value": "value",
+            "processor": {
+                "kind": "xpath-processor",
+                "xpath": "xpath"
+            }
+        }
+    ]
+}

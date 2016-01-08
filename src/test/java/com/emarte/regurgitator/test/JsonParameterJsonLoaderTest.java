@@ -1,16 +1,17 @@
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.*;
+import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.JsonParameterJsonLoader;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.HashSet;
 
-import static junit.framework.Assert.assertEquals;
+import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
 
-public class JsonParameterJsonLoaderTest extends JsonBaseTest {
-	private JsonParameterJsonLoader toTest = new JsonParameterJsonLoader();
+public class JsonParameterJsonLoaderTest extends JsonLoaderTest {
+	public JsonParameterJsonLoaderTest() {
+		super(new JsonParameterJsonLoader());
+	}
 
 	@Test
 	public void testMin() throws IOException, RegurgitatorException {
@@ -29,10 +30,6 @@ public class JsonParameterJsonLoaderTest extends JsonBaseTest {
 
 	@Test
 	public void testFullLoad() throws IOException, RegurgitatorException {
-		ConfigurationFile.loadFile("classpath:/JsonParameter_fullLoad.json");
-	}
-
-	private void assertExpectation(String filePath, String expected) throws RegurgitatorException, IOException {
-		assertEquals(expected, toTest.load(getJsonObject(filePath), new HashSet<Object>()).toString());
+		loadFile("classpath:/JsonParameter_fullLoad.json");
 	}
 }

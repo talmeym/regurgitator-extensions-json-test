@@ -1,29 +1,23 @@
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.*;
+import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.FreemarkerBuilderJsonLoader;
-import net.sf.json.JSONObject;
 import org.junit.Test;
 
-import java.util.HashSet;
+import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
 
-import static junit.framework.Assert.assertEquals;
-
-public class FreemarkerBuilderJsonLoaderTest extends JsonBaseTest {
-
-	private FreemarkerBuilderJsonLoader toTest = new FreemarkerBuilderJsonLoader();
+public class FreemarkerBuilderJsonLoaderTest extends JsonLoaderTest {
+	public FreemarkerBuilderJsonLoaderTest() {
+		super(new FreemarkerBuilderJsonLoader());
+	}
 
 	@Test
 	public void testMinimumJson() throws Exception {
-		assertExpectation(getJsonObject("classpath:/FreemarkerBuilder.json"), "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something']]");
+		assertExpectation("classpath:/FreemarkerBuilder.json", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something']]");
 	}
 
 	@Test
 	public void testFullLoadJson() throws RegurgitatorException {
-		ConfigurationFile.loadFile("classpath:/FreemarkerBuilder_fullLoad.json");
-	}
-
-	private void assertExpectation(JSONObject jsonObject, String expected) throws RegurgitatorException {
-		assertEquals(expected, toTest.load(jsonObject, new HashSet<Object>()).toString());
+		loadFile("classpath:/FreemarkerBuilder_fullLoad.json");
 	}
 }

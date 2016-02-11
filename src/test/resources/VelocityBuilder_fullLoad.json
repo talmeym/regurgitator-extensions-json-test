@@ -1,0 +1,13 @@
+{
+    "kind": "sequence",
+    "steps": [
+        {
+            "kind": "build-parameter",
+            "name": "name",
+            "builder": {
+                "kind": "velocity-builder",
+                "value": "value"
+            }
+        }
+    ]
+}

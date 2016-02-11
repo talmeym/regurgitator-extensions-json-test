@@ -12,8 +12,18 @@ public class FreemarkerBuilderJsonLoaderTest extends JsonLoaderTest {
 	}
 
 	@Test
-	public void testMinimumJson() throws Exception {
-		assertExpectation("classpath:/FreemarkerBuilder.json", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something']]");
+	public void testJson_file() throws Exception {
+		assertExpectation("classpath:/FreemarkerBuilder_file.json", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something'],false]");
+	}
+
+	@Test
+	public void testJson_source() throws Exception {
+		assertExpectation("classpath:/FreemarkerBuilder_source.json", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[com.emarte.regurgitator.core.ContextLocation:['context:location'],null],false]");
+	}
+
+	@Test
+	public void testJson_allContexts() throws Exception {
+		assertExpectation("classpath:/FreemarkerBuilder_allContexts.json", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something.something'],true]");
 	}
 
 	@Test

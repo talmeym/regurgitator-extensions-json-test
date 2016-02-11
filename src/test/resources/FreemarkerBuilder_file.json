@@ -1,0 +1,4 @@
+{
+    "kind": "freemarker-builder",
+    "file": "classpath:/something.something.file"
+}

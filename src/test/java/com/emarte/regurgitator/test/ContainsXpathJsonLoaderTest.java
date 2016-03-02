@@ -14,8 +14,13 @@ public class ContainsXpathJsonLoaderTest extends JsonLoaderTest {
 	}
 
 	@Test
-	public void testJson() throws DocumentException, SAXException, IOException, RegurgitatorException {
-		assertExpectation("classpath:/ContainsXpath.json", "com.emarte.regurgitator.extensions.ContainsXpath:[{this=http://something.com}]");
+	public void testMinJson() throws DocumentException, SAXException, IOException, RegurgitatorException {
+		assertExpectation("classpath:/ContainsXpath_min.json", "com.emarte.regurgitator.extensions.ContainsXpath:[{this=http://something.com}]");
+	}
+
+	@Test
+	public void testMaxJson() throws DocumentException, SAXException, IOException, RegurgitatorException {
+		assertExpectation("classpath:/ContainsXpath_max.json", "com.emarte.regurgitator.extensions.ContainsXpath:[{this=http://something.com}]");
 	}
 
 	@Test

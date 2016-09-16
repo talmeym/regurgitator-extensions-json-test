@@ -13,12 +13,12 @@ public class XpathProcessorJsonLoaderTest extends JsonLoaderTest {
 
 	@Test
 	public void testJson() throws Exception {
-		assertExpectation("classpath:/XpathProcessor.json", "com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix1=uri1, prefix2=uri2}]");
+		assertExpectation("classpath:/XpathProcessor.json", "com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix2=uri2, prefix1=uri1}]");
 	}
 
 	@Test
 	public void testMinimumJson() throws Exception {
-		assertExpectation("classpath:/XpathProcessor_min.json", "com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix1=uri1, prefix2=uri2}]");
+		assertExpectation("classpath:/XpathProcessor_min.json", "com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix2=uri2, prefix1=uri1}]");
 	}
 
 	@Test

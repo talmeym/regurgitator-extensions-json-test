@@ -1,0 +1,4 @@
+{
+  "kind": "velocity-processor",
+  "file": "classpath:/something.something.file"
+}

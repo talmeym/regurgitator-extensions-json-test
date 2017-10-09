@@ -11,17 +11,17 @@ import org.junit.Test;
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
 
 public class JsonPathProcessorJsonLoaderTest extends JsonLoaderTest {
-	public JsonPathProcessorJsonLoaderTest() {
-		super(new JsonPathProcessorJsonLoader());
-	}
+    public JsonPathProcessorJsonLoaderTest() {
+        super(new JsonPathProcessorJsonLoader());
+    }
 
-	@Test
-	public void testMinimumJson() throws Exception {
-		assertExpectation("classpath:/JsonPathProcessor.json", "com.emarte.regurgitator.extensions.JsonPathProcessor:['something.something']");
-	}
+    @Test
+    public void testMinimumJson() throws Exception {
+        assertExpectation("classpath:/JsonPathProcessor.json", "com.emarte.regurgitator.extensions.JsonPathProcessor:['something.something']");
+    }
 
-	@Test
-	public void testFullLoad() throws RegurgitatorException {
-		loadFile("classpath:/JsonPathProcessor_fullLoad.json");
-	}
+    @Test
+    public void testFullLoad() throws RegurgitatorException {
+        loadFile("classpath:/JsonPathProcessor_fullLoad.json");
+    }
 }

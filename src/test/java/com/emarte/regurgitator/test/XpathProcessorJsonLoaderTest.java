@@ -4,7 +4,7 @@
  */
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.*;
+import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.XpathProcessorJsonLoader;
 import org.junit.Test;
 

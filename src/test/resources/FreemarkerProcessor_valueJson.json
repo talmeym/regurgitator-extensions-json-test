@@ -1,0 +1,7 @@
+{
+  "kind": "freemarker-processor",
+  "value": {
+    "something": "${something}",
+    "somethingElse": 45
+  }
+}

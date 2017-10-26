@@ -1,0 +1,4 @@
+{
+    "kind": "freemarker-builder",
+    "value": "{\"something\":\"${something}\"}"
+}

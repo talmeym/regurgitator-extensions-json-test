@@ -16,8 +16,13 @@ public class FreemarkerProcessorJsonLoaderTest extends JsonLoaderTest {
     }
 
     @Test
-    public void testJson_value() throws Exception {
-        assertExpectation("classpath:/FreemarkerProcessor_value.json", "com.emarte.regurgitator.extensions.FreemarkerProcessor:['something something']");
+    public void testJson_valueString() throws Exception {
+        assertExpectation("classpath:/FreemarkerProcessor_valueString.json", "com.emarte.regurgitator.extensions.FreemarkerProcessor:['{\"something\":\"${something}\"}']");
+    }
+
+    @Test
+    public void testJson_valueJson() throws Exception {
+        assertExpectation("classpath:/FreemarkerProcessor_valueJson.json", "com.emarte.regurgitator.extensions.FreemarkerProcessor:['{\"something\":\"${something}\",\"somethingElse\":45}']");
     }
 
     @Test

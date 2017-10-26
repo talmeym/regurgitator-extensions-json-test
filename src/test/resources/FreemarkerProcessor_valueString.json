@@ -1,0 +1,4 @@
+{
+  "kind": "freemarker-processor",
+  "value": "{\"something\":\"${something}\"}"
+}

@@ -1,0 +1,7 @@
+{
+  "kind": "freemarker-builder",
+  "value": {
+    "something": "${something}",
+    "somethingElse": 45
+  }
+}

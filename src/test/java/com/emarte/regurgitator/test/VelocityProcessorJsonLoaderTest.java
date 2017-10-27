@@ -16,8 +16,13 @@ public class VelocityProcessorJsonLoaderTest extends JsonLoaderTest {
     }
 
     @Test
-    public void testXml_value() throws Exception {
-        assertExpectation("classpath:/VelocityProcessor_value.json", "com.emarte.regurgitator.extensions.VelocityProcessor:['something something']");
+    public void testXml_valueString() throws Exception {
+        assertExpectation("classpath:/VelocityProcessor_valueString.json", "com.emarte.regurgitator.extensions.VelocityProcessor:['{\"something\":\"${something}\"}']");
+    }
+
+    @Test
+    public void testXml_valueJson() throws Exception {
+        assertExpectation("classpath:/VelocityProcessor_valueJson.json", "com.emarte.regurgitator.extensions.VelocityProcessor:['{\"something\":\"${something}\",\"somethingElse\":45}']");
     }
 
     @Test

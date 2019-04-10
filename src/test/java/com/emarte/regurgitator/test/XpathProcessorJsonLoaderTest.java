@@ -4,11 +4,12 @@
  */
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.XpathProcessorJsonLoader;
 import org.junit.Test;
 
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.XpathProcessor_max;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.XpathProcessor_min;
 
 public class XpathProcessorJsonLoaderTest extends JsonLoaderTest {
     public XpathProcessorJsonLoaderTest() {
@@ -16,17 +17,17 @@ public class XpathProcessorJsonLoaderTest extends JsonLoaderTest {
     }
 
     @Test
-    public void testJson() throws Exception {
-        assertExpectation("classpath:/XpathProcessor.json", "com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix2=uri2, prefix1=uri1}]");
+    public void testMinimum() throws Exception {
+        assertExpectation("classpath:/XpathProcessor_min.json", XpathProcessor_min);
     }
 
     @Test
-    public void testMinimumJson() throws Exception {
-        assertExpectation("classpath:/XpathProcessor_min.json", "com.emarte.regurgitator.extensions.XpathProcessor:['xpath/xpath',{prefix2=uri2, prefix1=uri1}]");
+    public void testMaximum() throws Exception {
+        assertExpectation("classpath:/XpathProcessor_max.json", XpathProcessor_max);
     }
 
     @Test
-    public void testFullLoad() throws RegurgitatorException {
+    public void testFullLoad() throws Exception {
         loadFile("classpath:/XpathProcessor_fullLoad.json");
     }
 }

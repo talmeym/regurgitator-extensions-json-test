@@ -1,0 +1,6 @@
+{
+  "kind": "velocity-processor",
+  "value": {
+    "something": "${something}"
+  }
+}

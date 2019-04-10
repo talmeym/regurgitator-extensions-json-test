@@ -4,11 +4,11 @@
  */
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.VelocityProcessorJsonLoader;
 import org.junit.Test;
 
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
 
 public class VelocityProcessorJsonLoaderTest extends JsonLoaderTest {
     public VelocityProcessorJsonLoaderTest() {
@@ -16,22 +16,22 @@ public class VelocityProcessorJsonLoaderTest extends JsonLoaderTest {
     }
 
     @Test
-    public void testXml_valueString() throws Exception {
-        assertExpectation("classpath:/VelocityProcessor_valueString.json", "com.emarte.regurgitator.extensions.VelocityProcessor:['{\"something\":\"${something}\"}']");
+    public void testValue() throws Exception {
+        assertExpectation("classpath:/VelocityProcessor_value.json",  VelocityProcessor_value);
     }
 
     @Test
-    public void testXml_valueJson() throws Exception {
-        assertExpectation("classpath:/VelocityProcessor_valueJson.json", "com.emarte.regurgitator.extensions.VelocityProcessor:['{\"something\":\"${something}\",\"somethingElse\":45}']");
+    public void testValueFlat() throws Exception {
+        assertExpectation("classpath:/VelocityProcessor_valueFlat.json", VelocityProcessor_valueFlat);
     }
 
     @Test
-    public void testXml_file() throws Exception {
-        assertExpectation("classpath:/VelocityProcessor_file.json", "com.emarte.regurgitator.extensions.VelocityProcessor:['something something']");
+    public void testFile() throws Exception {
+        assertExpectation("classpath:/VelocityProcessor_file.json", VelocityProcessor_file);
     }
 
     @Test
-    public void testFullLoad() throws RegurgitatorException {
+    public void testFullLoad() throws Exception {
         loadFile("classpath:/VelocityProcessor_fullLoad.json");
     }
 }

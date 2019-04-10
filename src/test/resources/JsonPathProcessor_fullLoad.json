@@ -1,13 +1,15 @@
 {
     "kind": "sequence",
+    "id": "regurgitator-configuration-1",
     "steps": [
         {
             "kind": "create-parameter",
+            "id": "create-param-1",
             "name": "name",
-            "value": "value",
+            "source": "context:location",
             "processor": {
                 "kind": "json-path-processor",
-                "json-path": "something.something"
+                "json-path": "$.something.something"
             }
         }
     ]

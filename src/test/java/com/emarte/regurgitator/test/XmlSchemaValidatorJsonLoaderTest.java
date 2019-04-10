@@ -8,6 +8,7 @@ import com.emarte.regurgitator.extensions.XmlSchemaValidatorJsonLoader;
 import org.junit.Test;
 
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.XmlSchemaValidator;
 
 public class XmlSchemaValidatorJsonLoaderTest extends JsonLoaderTest {
     public XmlSchemaValidatorJsonLoaderTest() {
@@ -15,8 +16,8 @@ public class XmlSchemaValidatorJsonLoaderTest extends JsonLoaderTest {
     }
 
     @Test
-    public void testJson() throws Exception {
-        assertExpectation("classpath:/XmlSchemaValidator.json", "com.emarte.regurgitator.extensions.XmlSchemaValidator:['classpath:/something.something.file']");
+    public void testThis() throws Exception {
+        assertExpectation("classpath:/XmlSchemaValidator.json", XmlSchemaValidator);
     }
 
     @Test

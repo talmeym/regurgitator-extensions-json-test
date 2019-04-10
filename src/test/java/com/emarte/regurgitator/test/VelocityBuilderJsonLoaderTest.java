@@ -4,11 +4,11 @@
  */
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.VelocityBuilderJsonLoader;
 import org.junit.Test;
 
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
 
 public class VelocityBuilderJsonLoaderTest extends JsonLoaderTest {
     public VelocityBuilderJsonLoaderTest() {
@@ -16,32 +16,32 @@ public class VelocityBuilderJsonLoaderTest extends JsonLoaderTest {
     }
 
     @Test
-    public void testJson_file() throws Exception {
-        assertExpectation("classpath:/VelocityBuilder_file.json", "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something'],false]");
+    public void testValue() throws Exception {
+        assertExpectation("classpath:/VelocityBuilder_value.json", VelocityBuilder_value);
     }
 
     @Test
-    public void testJson_source() throws Exception {
-        assertExpectation("classpath:/VelocityBuilder_source.json", "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[com.emarte.regurgitator.core.ContextLocation:['context:location'],null],false]");
+    public void testValueFlat() throws Exception {
+        assertExpectation("classpath:/VelocityBuilder_valueFlat.json", VelocityBuilder_valueFlat);
     }
 
     @Test
-    public void testJson_valueString() throws Exception {
-        assertExpectation("classpath:/VelocityBuilder_valueString.json", "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'{\"something\":\"${something}\"}'],false]");
+    public void testFile() throws Exception {
+        assertExpectation("classpath:/VelocityBuilder_file.json", VelocityBuilder_file);
     }
 
     @Test
-    public void testJson_valueAsJson() throws Exception {
-        assertExpectation("classpath:/VelocityBuilder_valueJson.json", "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'{\"something\":\"${something}\",\"somethingElse\":45}'],false]");
+    public void testSource() throws Exception {
+        assertExpectation("classpath:/VelocityBuilder_source.json", VelocityBuilder_source);
     }
 
     @Test
-    public void testJson_allContexts() throws Exception {
-        assertExpectation("classpath:/VelocityBuilder_allContexts.json", "com.emarte.regurgitator.extensions.VelocityBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something'],true]");
+    public void testAllContexts() throws Exception {
+        assertExpectation("classpath:/VelocityBuilder_allContexts.json", VelocityBuilder_allContexts);
     }
 
     @Test
-    public void testFullLoadJson() throws RegurgitatorException {
+    public void testFullLoad() throws Exception {
         loadFile("classpath:/VelocityBuilder_fullLoad.json");
     }
 }

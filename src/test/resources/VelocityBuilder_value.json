@@ -2,6 +2,5 @@
   "kind": "velocity-builder",
   "value": {
     "something": "${something}",
-    "somethingElse": 45
   }
 }

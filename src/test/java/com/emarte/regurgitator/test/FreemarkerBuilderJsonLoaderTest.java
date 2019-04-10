@@ -4,11 +4,11 @@
  */
 package com.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.core.RegurgitatorException;
 import com.emarte.regurgitator.extensions.FreemarkerBuilderJsonLoader;
 import org.junit.Test;
 
 import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
 
 public class FreemarkerBuilderJsonLoaderTest extends JsonLoaderTest {
     public FreemarkerBuilderJsonLoaderTest() {
@@ -16,32 +16,32 @@ public class FreemarkerBuilderJsonLoaderTest extends JsonLoaderTest {
     }
 
     @Test
-    public void testJson_file() throws Exception {
-        assertExpectation("classpath:/FreemarkerBuilder_file.json", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something something'],false]");
+    public void testValue() throws Exception {
+        assertExpectation("classpath:/FreemarkerBuilder_value.json", FreemarkerBuilder_value);
     }
 
     @Test
-    public void testJson_source() throws Exception {
-        assertExpectation("classpath:/FreemarkerBuilder_source.json", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[com.emarte.regurgitator.core.ContextLocation:['context:location'],null],false]");
+    public void testValueFlat() throws Exception {
+        assertExpectation("classpath:/FreemarkerBuilder_valueFlat.json", FreemarkerBuilder_valueFlat);
     }
 
     @Test
-    public void testJson_valueString() throws Exception {
-        assertExpectation("classpath:/FreemarkerBuilder_valueString.json", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'{\"something\":\"${something}\"}'],false]");
+    public void testFile() throws Exception {
+        assertExpectation("classpath:/FreemarkerBuilder_file.json", FreemarkerBuilder_file);
     }
 
     @Test
-    public void testJson_valueAsJson() throws Exception {
-        assertExpectation("classpath:/FreemarkerBuilder_valueJson.json", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'{\"something\":\"${something}\",\"somethingElse\":45}'],false]");
+    public void testSource() throws Exception {
+        assertExpectation("classpath:/FreemarkerBuilder_source.json", FreemarkerBuilder_source);
     }
 
     @Test
-    public void testJson_allContexts() throws Exception {
-        assertExpectation("classpath:/FreemarkerBuilder_allContexts.json", "com.emarte.regurgitator.extensions.FreemarkerBuilder:[com.emarte.regurgitator.core.ValueSource:[null,'something.something'],true]");
+    public void testAllContexts() throws Exception {
+        assertExpectation("classpath:/FreemarkerBuilder_allContexts.json", FreemarkerBuilder_allContexts);
     }
 
     @Test
-    public void testFullLoadJson() throws RegurgitatorException {
+    public void testFullLoad() throws Exception {
         loadFile("classpath:/FreemarkerBuilder_fullLoad.json");
     }
 }

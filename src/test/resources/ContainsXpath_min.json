@@ -1,4 +1,3 @@
 {
-    "kind": "contains-xpath",
-    "namespaces": "this=http://something.com"
+    "kind": "contains-xpath"
 }

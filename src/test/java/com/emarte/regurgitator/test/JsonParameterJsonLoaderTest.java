@@ -31,6 +31,11 @@ public class JsonParameterJsonLoaderTest extends JsonLoaderTest {
     }
 
     @Test
+    public void testMultipleProcessors() throws Exception {
+        assertExpectation("classpath:/JsonParameter_multipleProcessors.json", JsonParameter_multipleProcessors);
+    }
+
+    @Test
     public void testFullLoad() throws Exception {
         loadFile("classpath:/JsonParameter_fullLoad.json");
     }

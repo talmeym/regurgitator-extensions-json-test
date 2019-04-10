@@ -1,0 +1,17 @@
+{
+  "id": "json-parameter-1",
+  "kind": "json-parameter",
+  "name": "context:name",
+  "type": "NUMBER",
+  "merge": "LEAVE",
+  "source": "context:location",
+  "json-path": "jsonpath.jsonpath",
+  "processor": [
+    {
+      "kind": "test-value-processor"
+    },
+    {
+      "kind": "test-value-processor"
+    }
+  ]
+}

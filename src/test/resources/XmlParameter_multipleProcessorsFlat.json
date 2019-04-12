@@ -8,12 +8,5 @@
     "prefix1": "uri1",
     "prefix2": "uri2"
   },
-  "processors": [
-    {
-      "kind": "test-value-processor"
-    },
-    {
-      "kind": "test-value-processor"
-    }
-  ]
+  "processors": "test-value-processor,test-value-processor"
 }

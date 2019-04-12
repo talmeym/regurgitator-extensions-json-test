@@ -6,12 +6,5 @@
   "merge": "LEAVE",
   "source": "context:location",
   "json-path": "jsonpath.jsonpath",
-  "processors": [
-    {
-      "kind": "test-value-processor"
-    },
-    {
-      "kind": "test-value-processor"
-    }
-  ]
+  "processors": "test-value-processor,test-value-processor"
 }

@@ -1,0 +1,15 @@
+{
+    "kind": "sequence",
+    "id": "regurgitator-configuration-1",
+    "steps": [
+        {
+            "kind": "create-parameter",
+            "id": "create-param-1",
+            "name": "name",
+            "source": "context:location",
+            "processor": {
+                "kind": "json-print-processor"
+            }
+        }
+    ]
+}

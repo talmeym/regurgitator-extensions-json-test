@@ -1,6 +1,0 @@
-{
-  "kind": "velocity-builder",
-  "value": {
-    "something": "${something}"
-  }
-}

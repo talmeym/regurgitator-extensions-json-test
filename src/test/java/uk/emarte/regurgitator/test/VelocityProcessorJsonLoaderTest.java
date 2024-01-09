@@ -2,13 +2,13 @@
  * Copyright (C) 2017 Miles Talmey.
  * Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
  */
-package com.emarte.regurgitator.test;
+package uk.emarte.regurgitator.test;
 
-import com.emarte.regurgitator.extensions.VelocityProcessorJsonLoader;
+import uk.emarte.regurgitator.extensions.VelocityProcessorJsonLoader;
 import org.junit.Test;
 
-import static com.emarte.regurgitator.core.ConfigurationFile.loadFile;
-import static com.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
+import static uk.emarte.regurgitator.core.ConfigurationFile.loadFile;
+import static uk.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
 
 public class VelocityProcessorJsonLoaderTest extends JsonLoaderTest {
     public VelocityProcessorJsonLoaderTest() {

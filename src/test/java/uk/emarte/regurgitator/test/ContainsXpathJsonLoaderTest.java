@@ -4,8 +4,8 @@
  */
 package uk.emarte.regurgitator.test;
 
-import uk.emarte.regurgitator.extensions.ContainsXpathJsonLoader;
 import org.junit.Test;
+import uk.emarte.regurgitator.extensions.ContainsXpathJsonLoader;
 
 import static uk.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;
 

@@ -4,8 +4,8 @@
  */
 package uk.emarte.regurgitator.test;
 
-import uk.emarte.regurgitator.extensions.VelocityProcessorJsonLoader;
 import org.junit.Test;
+import uk.emarte.regurgitator.extensions.VelocityProcessorJsonLoader;
 
 import static uk.emarte.regurgitator.core.ConfigurationFile.loadFile;
 import static uk.emarte.regurgitator.test.ExtensionsLoaderTestExpectations.*;

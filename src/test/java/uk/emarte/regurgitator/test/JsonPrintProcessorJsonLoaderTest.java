@@ -16,7 +16,7 @@ public class JsonPrintProcessorJsonLoaderTest extends JsonLoaderTest {
     }
 
     @Test
-    public void testThis() throws Exception {
+    public void testLoader() throws Exception {
         assertExpectation("classpath:/JsonPrintProcessor.json", JsonPrintProcessor);
     }
 

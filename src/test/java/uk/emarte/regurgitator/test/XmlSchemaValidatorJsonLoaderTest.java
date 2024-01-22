@@ -16,7 +16,7 @@ public class XmlSchemaValidatorJsonLoaderTest extends JsonLoaderTest {
     }
 
     @Test
-    public void testThis() throws Exception {
+    public void testValidator() throws Exception {
         assertExpectation("classpath:/XmlSchemaValidator.json", XmlSchemaValidator);
     }
 

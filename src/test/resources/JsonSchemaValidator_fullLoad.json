@@ -1,0 +1,14 @@
+{
+    "kind": "sequence",
+    "steps": [
+        {
+            "kind": "create-parameter",
+            "name": "create-parameter-1",
+            "value": "value",
+            "processor": {
+                "kind": "json-schema-validator",
+                "file": "classpath:/something.something.file"
+            }
+        }
+    ]
+}

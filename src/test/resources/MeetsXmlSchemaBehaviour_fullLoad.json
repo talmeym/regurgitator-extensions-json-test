@@ -1,0 +1,30 @@
+{
+    "id": "regurgitator-configuration-1",
+    "kind": "regurgitator-configuration",
+    "steps": [
+        {
+            "id": "decision-1",
+            "kind": "decision",
+            "steps": [
+                {
+                    "id": "test-step-1",
+                    "kind": "test-step"
+                }
+            ],
+            "rules": [
+                {
+                    "id": "rule-1",
+                    "step": "test-step-1",
+                    "conditions": [
+                        {
+                            "id": "condition-1",
+                            "behaviour": "meets-xml-schema",
+                            "source": "context:location",
+                            "value": "classpath:/schema_file.xsd"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

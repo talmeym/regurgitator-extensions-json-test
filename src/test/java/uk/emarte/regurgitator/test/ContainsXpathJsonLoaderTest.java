@@ -16,21 +16,21 @@ public class ContainsXpathJsonLoaderTest extends JsonLoaderTest {
 
     @Test
     public void testMinimum() throws Exception {
-        assertExpectation("classpath:/ContainsXpath_min.json", ContainsXpath_min);
+        assertExpectation("classpath:/ContainsXpathBehaviour_min.json", ContainsXpathBehaviour_min);
     }
 
     @Test
     public void testMaximum() throws Exception {
-        assertExpectation("classpath:/ContainsXpath_max.json", ContainsXpath_max);
+        assertExpectation("classpath:/ContainsXpathBehaviour_max.json", ContainsXpathBehaviour_max);
     }
 
     @Test
     public void testFullLoad() throws Exception {
-        assertExpectationFullLoad("classpath:/ContainsXpath_fullLoad.json", ContainsXpath_fullLoad);
+        assertExpectationFullLoad("classpath:/ContainsXpathBehaviour_fullLoad.json", ContainsXpathBehaviour_fullLoad);
     }
 
     @Test
     public void testFullLoad_entityLookup() throws Exception {
-        assertExpectationFullLoad("classpath:/ContainsXpath_fullLoad_entityLookup.json", ContainsXpath_fullLoad_entityLookup);
+        assertExpectationFullLoad("classpath:/ContainsXpathBehaviour_fullLoad_entityLookup.json", ContainsXpathBehaviour_fullLoad_entityLookup);
     }
 }

@@ -21,6 +21,11 @@ public class JsonParameterJsonLoaderTest extends JsonLoaderTest {
     }
 
     @Test
+    public void testMinimumOptional() throws Exception {
+        assertExpectation("classpath:/JsonParameter_min_optional.json", JsonParameter_min_optional);
+    }
+
+    @Test
     public void testMaximum() throws Exception {
         assertExpectation("classpath:/JsonParameter_max.json", JsonParameter_max);
     }

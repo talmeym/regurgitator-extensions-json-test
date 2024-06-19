@@ -1,0 +1,8 @@
+{
+    "id": "json-parameter-1",
+    "kind": "json-parameter",
+    "name": "name",
+    "source": "location",
+    "json-path": "jsonpath.jsonpath",
+    "optional": true
+}
